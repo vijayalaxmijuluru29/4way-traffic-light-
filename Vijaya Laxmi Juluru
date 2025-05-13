@@ -1,0 +1,83 @@
+Ledvijju=redlight
+Ledliki=orange 
+Ledsathya=green 
+
+
+
+int ledvijju=2;
+Int ledliki=3;  ///south
+int ledsathya=4;
+ 
+int ledvijju=5;
+int ledliki=6; ///west
+int ledsathya=7;
+
+int ledvijju=8;
+Int ledliki=9;   /// North
+int ledsathya=10;
+
+int ledvijju=11;
+Int ledliki=12; //// East 
+int ledsathya=13
+
+void setup()
+{
+pinMode(2, OUTPUT);
+pinMode(3, OUTPUT);
+pinMode(4, OUTPUT);
+pinMode(5, OUTPUT);
+pinMode(6, OUTPUT);
+pinMode(7, OUTPUT);
+pinMode(8, OUTPUT);
+pinMode(9, OUTPUT);
+pinMode(10, OUTPUT);
+pinMode(11, OUTPUT);
+pinMode(12, OUTPUT);
+pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+digitalWrite(4,HIGH);
+delay (3000);
+digitalWrite(4,LOW);
+digitalWrite(3,HIGH);
+delay (1000);                 ////South
+digitalWrite(3,LOW);
+digitalWrite(2,HIGH);
+delay (12000);
+digitalWrite(2,LOW);
+
+
+digitalWrite(7,HIGH)
+delay (3000);
+digitalWrite(7,LOW);
+digitalWrite(6,HIGH);
+delay (1000);                  ///West 
+digitalWrite(6,LOW);
+digitalWrite(5,HIGH);
+delay (12000);
+digitalWrite(5,LOW);
+
+
+digitalWrite(10,HIGH);
+delay (3000);
+digitalWrite(10,LOW);
+digitalWrite(9,HIGH);
+delay (1000);               ///North 
+digitalWrite(9,LOW);
+digitalWrite(8,HIGH);
+delay (12000);
+digitalWrite(8,LOW);
+
+
+digitalWrite(13,HIGH)
+delay (3000);
+digitalWrite(13,LOW);
+digitalWrite(12,HIGH);
+delay (1000);                 ////East 
+digitalWrite(12,LOW);
+digitalWrite(10,HIGH);
+delay (12000);
+digitalWrite(10,LOW);
+}
