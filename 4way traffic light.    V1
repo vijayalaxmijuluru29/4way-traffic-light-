@@ -5,7 +5,7 @@ Ledsathya=green
 
 
 int ledvijju=2;
-Int ledliki=3;  ///south
+int ledliki=3;  ///south
 int ledsathya=4;
  
 int ledvijju=5;
@@ -13,11 +13,11 @@ int ledliki=6; ///west
 int ledsathya=7;
 
 int ledvijju=8;
-Int ledliki=9;   /// North
+int ledliki=9;   /// North
 int ledsathya=10;
 
 int ledvijju=11;
-Int ledliki=12; //// East 
+int ledliki=12; //// East 
 int ledsathya=13
 
 void setup()
