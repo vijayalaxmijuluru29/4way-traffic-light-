@@ -1,4 +1,25 @@
+voidLoop(){
 
+ int moisture =analogRead(A0);
+ serial.print("" soil moisture  value : '');
+Lcd .print ("soil moisture  value: ");
+ if ( soil moisture value>500)
+{
+ digitalWrite ( 7,HIGH);// water pump on
+digitalWrite ( 9,HIGH);// LED on
+
+digitalWrite ( 10,HIGH);//Buzzer on
+
+}
+else
+{
+digitalWrite ( 7,LOW);// water pump off
+digitalWrite ( 9,LOW);// LED off
+
+digitalWrite ( 10,LOW);//Buzzer off
+}
+
+}
 
 
 
