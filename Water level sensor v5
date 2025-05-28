@@ -1,0 +1,29 @@
+/*
+  Water Level Sensor Arduino Example
+  
+const int sensorPin = A0;       // Analog pin connected to sensor output 
+const int sensorMin = 200;      // Minimum sensor value (empty)
+const int sensorMax = 800;      // Maximum sensor value (full)
+
+void setup() {
+  Serial.begin(9600);           // Initialize serial communication at 9600 baud
+}
+
+void loop() {
+  int sensorValue = analogRead(sensorPin);                  // Read analog sensor value (0-1023)
+  
+  // Constrain sensor value within calibration range
+  sensorValue = constrain(sensorValue, sensorMin, sensorMax);
+
+  // Map sensor value to 0-100% water level
+  int waterLevelPercent = map(sensorValue, sensorMin, sensorMax, 0, 100);
+
+  // Print results to Serial Monitor
+  Serial.print("Sensor Value: ");
+  Serial.print(sensorValue);
+  Serial.print(" | Water Level: ");
+  Serial.print(waterLevelPercent);
+  Serial.println("%");
+
+  delay(1000);  // Wait 1 second before next reading
+}
