@@ -1,0 +1,36 @@
+const int rainSensorPin = A0;  // Analog pin for rain sensor
+const int ledPin = 13;         // Digital pin for LED
+const int threshold = 500;     // Threshold for rain detection
+&nbsp;
+&nbsp;
+
+void setup() {
+  Serial.begin(9600);          // Initialize serial communication
+  pinMode(ledPin, OUTPUT);     // Set LED pin as output
+}
+&nbsp;
+&nbsp;
+
+void loop() {
+  int sensorValue = analogRead(rainSensorPin);  // Read sensor value
+&nbsp;
+&nbsp;
+
+  Serial.print("Rain Sensor Value: ");
+  Serial.println(sensorValue);
+&nbsp;
+&nbsp;
+
+  // Check if rain is detected
+  if(sensorValue < threshold) {
+    Serial.println("Rain Detected!");
+    digitalWrite(ledPin, HIGH); // Turn LED on
+  } else {
+    Serial.println("No Rain.");
+    digitalWrite(ledPin, LOW);  // Turn LED off
+  }
+&nbsp;
+&nbsp;
+
+  delay(1000); // Wait 1 second before next reading
+}
