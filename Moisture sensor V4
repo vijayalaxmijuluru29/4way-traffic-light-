@@ -1,8 +1,33 @@
-voidLoop(){
+#Inculde <Wire.h>
+#Include <LiquidCrystal_I2c.h>
+ const int  moisture Sensor = A0;
+ const int relay = 7;
+const int led = 9;
+const int buzzer = 10;
+const int  dry value = 500;
+
+ Void SetUp()
+{
+lcd.begin();
+lcd.backlight();
+pinMode(7, OUTPUT);
+pinMode (9,OUTPUT);
+pinMode (10, OUTPUT);
+
+serial begin(9600); ///  to start 
+}
+
+voidloop(){
+int moisture =analogRead(A0);
+
+serial.print(""  soil moisture  value : '');
+Lcd .print ("soil moisture value: ");
+ voidLoop(){
 
  int moisture =analogRead(A0);
  serial.print("" soil moisture  value : '');
 Lcd .print ("soil moisture  value: ");
+
  if ( soil moisture value>500)
 {
  digitalWrite ( 7,HIGH);// water pump on
@@ -19,7 +44,7 @@ digitalWrite ( 9,LOW);// LED off
 digitalWrite ( 10,LOW);//Buzzer off
 }
 
-}
+
 
 
 
