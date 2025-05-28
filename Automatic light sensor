@@ -1,0 +1,31 @@
+// Automatic Light Sensor using Arduino
+
+const int LDRPin = A0;      // Analog pin connected to LDR
+const int LEDPin = 13;      // Digital pin connected to LED
+const int threshold = 600;  // Threshold value to determine light/dark (0-1023)
+
+// Variables
+int lightLevel = 0;
+
+void setup() {
+  pinMode(LEDPin, OUTPUT);
+  Serial.begin(9600);  // Initialize serial communication for debug
+}
+
+void loop() {
+  // Read light level from LDR
+  lightLevel = analogRead(LDRPin);
+
+  // Print the light level to serial monitor
+  Serial.print("Light Level: ");
+  Serial.println(lightLevel);
+
+  // Check if light level is below threshold (means dark)
+  if (lightLevel < threshold) {
+    digitalWrite(LEDPin, HIGH);  // Turn LED ON
+  } else {
+    digitalWrite(LEDPin, LOW);   // Turn LED OFF
+  }
+
+  delay(500); // Small delay to avoid flooding serial output
+}
