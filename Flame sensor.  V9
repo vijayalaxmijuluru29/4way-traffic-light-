@@ -1,0 +1,24 @@
+///// Flame Sensor Arduino///// 
+
+const int flameSensorPin = 2;  // Digital pin connected to flame sensor output
+const int ledPin = 13;          // Digital pin connected to LED
+
+void setup() {
+  Serial.begin(9600);           // Initialize serial communication at 9600 baud
+  pinMode(flameSensorPin, INPUT); // Set flame sensor pin as input
+  pinMode(ledPin, OUTPUT);      // Set LED pin as output
+}
+
+void loop() {
+  int flameDetected = digitalRead(flameSensorPin); // Read the flame sensor output
+
+  if (flameDetected == HIGH) { // Flame detected
+    Serial.println("Flame detected!");
+    digitalWrite(ledPin, HIGH); // Turn on LED
+  } else { // No flame detected
+    Serial.println("No flame detected.");
+    digitalWrite(ledPin, LOW); // Turn off LED
+  }
+
+  delay(1000); // Wait 1 second before the next reading
+}
